@@ -1,4 +1,5 @@
-import { SignedIn, SignOutButton } from '@clerk/nextjs';
+import { OrganizationSwitcher, SignedIn, SignOutButton } from '@clerk/nextjs';
+// import { dark } from "@clerk/themes";
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,10 +10,10 @@ const Topbar = () => {
         <Image src="/assets/logo.svg" alt="logo" width={28} height={28} />
         <p className="text-heading3-bold text-light-1 max-xs:hidden">Threads</p>
       </Link>
+
       <div className="flex items-center gap-1">
         <div className="block md:hidden">
           <SignedIn>
-            {/* The code within SignedIn will only show if the user is signed in.*/}
             <SignOutButton>
               <div className="flex cursor-pointer">
                 <Image
@@ -25,6 +26,8 @@ const Topbar = () => {
             </SignOutButton>
           </SignedIn>
         </div>
+
+        <OrganizationSwitcher />
       </div>
     </nav>
   );
